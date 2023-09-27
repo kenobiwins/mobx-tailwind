@@ -1,4 +1,7 @@
+import About from "./About";
+import Home from "./Home";
 import "./index.css";
+import UserStore from "./store/UserStore";
 
 const people = [
   {
@@ -38,10 +41,15 @@ function Example() {
 }
 
 function App() {
+  const store = new UserStore();
+
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">hello there</h1>; <Example />
-    </>
+    <div className=" bg-gradient-to-r from-purple-500 to-pink-500">
+      <h1 className="text-3xl font-bold underline">hello there</h1>
+      <Home store={store} />
+      <About store={store} />
+      <Example />
+    </div>
   );
 }
 
